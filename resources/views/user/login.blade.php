@@ -11,8 +11,10 @@
 </head>
 <body>
 <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    {{-- Melakukan pengecekkan error --}}
+    {{-- Jika error --}}
     @if(isset($error))
-
+    {{-- Tampilkan error --}}
     <div class="row">
         <div class="alert alert-danger" role="alert">
            {{$error}}
@@ -22,11 +24,13 @@
     <div class="row align-items-center g-lg-5 py-5">
         <div class="col-lg-7 text-center text-lg-start">
             <h1 class="display-4 fw-bold lh-1 mb-3">Login</h1>
-            <p class="col-lg-10 fs-4">by <a target="_blank" href="https://www.programmerzamannow.com/">Programmer Zaman
-                    Now</a></p>
+            <p class="col-lg-10 fs-4">by <a target="_blank" href="">Muhammad Razzaaq Zulkahfi</a></p>
+            <p>Supported by Programmer Zaman Now</p>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/login">
+                {{-- Membuat CSRF agar bisa mengirim input --}}
+                {{-- Dapatkan token --}}
                 @csrf
                 <div class="form-floating mb-3">
                     <input name="user" type="text" class="form-control" id="user" placeholder="id">
